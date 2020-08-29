@@ -1,0 +1,30 @@
+.nav {
+  display: flex;
+  color: #fff;
+  overflow-x: scroll;
+  padding: 10px;
+  padding-left: 40px;
+}
+/* hide scrollbar */
+.nav {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.nav::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.nav__category {
+  cursor: pointer;
+  margin: 0 30px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+  opacity: 0.7;
+  transition: transform 50ms ease-out;
+}
+
+.nav__category:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}

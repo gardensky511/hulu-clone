@@ -1,0 +1,22 @@
+import React from "react";
+import "./Nav.css";
+
+function Nav() {
+  return (
+    <div className="nav">
+      <h2 className="nav__category">Trending</h2>
+      <h2 className="nav__category">Top Rated</h2>
+      <h2 className="nav__category">Action</h2>
+      <h2 className="nav__category">Comedy</h2>
+      <h2 className="nav__category">Horror</h2>
+      <h2 className="nav__category">Romance</h2>
+      <h2 className="nav__category">Mystery</h2>
+      <h2 className="nav__category">Sci-fi</h2>
+      <h2 className="nav__category">Western</h2>
+      <h2 className="nav__category">Animation</h2>
+      <h2 className="nav__category">TV Movie</h2>
+    </div>
+  );
+}
+
+export default Nav;
