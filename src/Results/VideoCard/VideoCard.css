@@ -9,6 +9,9 @@
 .videoCard:hover {
   transform: scale(1.05);
 }
+.videoCard:hover > .videoCard__stats {
+  display: inline;
+}
 
 .videoCard__img {
   height: 280px;
@@ -23,5 +26,16 @@
   padding-top: 10px;
 }
 
-.videoCard__likes {
+.videoCard__stats {
+  display: none;
+}
+
+.videoCard__stats svg {
+  margin-bottom: -5px;
+}
+
+.readOn {
+  color: #fff;
+  opacity: 0.5;
+  font-size: 14px;
 }

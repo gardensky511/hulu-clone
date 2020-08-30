@@ -1,17 +1,36 @@
 import React from "react";
 import "./VideoCard.css";
+import TextTruncate from "react-text-truncate";
+import ThumbUpSharpIcon from "@material-ui/icons/ThumbUpSharp";
+
+const base_url = "https://image.tmdb.org/t/p/original/";
 
 function VideoCard({ movie }) {
   return (
     <div className="videoCard">
       <img
-        src="https://lumiere-a.akamaihd.net/v1/images/riseofskywalker-moviepage-emeagrid-m_a2600ffe.jpeg?region=0,0,800,600"
-        alt="poster"
+        src={`${base_url}${movie.backdrop_path || movie.poster_path}`}
+        alt="movie_poster"
         className="videoCard__img"
       />
-      <p className="videoCard__desc">description</p>
-      <h2 className="videoCard__title">Movie title</h2>
-      <p className="videoCard__likes">number of likes</p>
+      <TextTruncate
+        line={1}
+        element="p"
+        truncateText="..."
+        text={movie.overview}
+        textTruncateChild={
+          <a href="#" className="readOn">
+            Read on
+          </a>
+        }
+      />
+      <h2 className="videoCard__title">{movie.title || movie.original_name}</h2>
+      <p className="videoCard__stats">
+        {movie.media_type && `${movie.media_type.toUpperCase()} • `}
+        {movie.release_date || movie.first_air_date}
+        {" • "}
+        <ThumbUpSharpIcon /> {movie.vote_count}
+      </p>
     </div>
   );
 }
