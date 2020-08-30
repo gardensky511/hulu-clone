@@ -3,8 +3,9 @@ import "./Results.css";
 import VideoCard from "./VideoCard/VideoCard";
 import axios from "../Api/axios";
 import requests from "../Api/requests";
+import FlipMove from "react-flip-move";
 
-function Results() {
+function Results({ selectedOption }) {
   // useState는 state 변수, 해당 변수를 갱신할 수 있는 함수를 쌍으로 반환
   // useState()의 인자로 넘기는 값은 state의 초기 값
   const [movies, setMovies] = useState([]);
@@ -19,12 +20,12 @@ function Results() {
   // [특정값] : 특정값이 변경됐을 때만 다시 실행(만약 배열 안에 여러 아이템이 있을 경우는 하나라도 달라도 리렌더링)
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.fetchTrending);
+      const request = await axios.get(selectedOption);
       setMovies(request.data.results);
       return request;
     }
     fetchData();
-  }, []);
+  }, [selectedOption]); //selectedOption이 바뀔 때마다 리렌더링
 
   // 얘도 지워도 되긴해여!
   useEffect(() => {
@@ -33,9 +34,11 @@ function Results() {
 
   return (
     <div className="results">
-      {movies.map(movie => (
-        <VideoCard movie={movie} key={movie.id} />
-      ))}
+      <FlipMove>
+        {movies.map(movie => (
+          <VideoCard key={movie.id} movie={movie} />
+        ))}
+      </FlipMove>
     </div>
   );
 }
