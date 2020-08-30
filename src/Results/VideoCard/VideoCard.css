@@ -1,6 +1,6 @@
 .videoCard {
   color: #fff;
-  width: 420px;
+  width: 400px;
   height: 400px;
   padding: 20px;
   cursor: pointer;
@@ -16,10 +16,8 @@
 .videoCard__img {
   height: 280px;
   object-fit: cover;
-  width: 420px;
-}
-
-.videoCard__desc {
+  width: 400px;
+  margin-bottom: 8px;
 }
 
 .videoCard__title {
