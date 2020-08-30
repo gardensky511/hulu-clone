@@ -1,4 +1,6 @@
-# Clone hulu with ReactJS
+# hulu-clone
+
+Clone hulu with basic ReactJS
 
 ### DEPLOY
 
